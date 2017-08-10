@@ -1,0 +1,16 @@
+{
+  "name": "footer-section",
+  "version": "1.0.0",
+  "description": "Basic footer section with RWD.",
+  "main": "lib/js/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "footer",
+    "rwd",
+    "react"
+  ],
+  "author": "Pi-Yin Hsiao",
+  "license": "MIT"
+}
