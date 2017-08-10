@@ -4,10 +4,10 @@ import Express from 'express';
 
 const WEB_PORT = process.env.PORT || 3000;
 const expressStaticRoutes = [
-    {path: '/fonts/', serverPath: '/dist/fonts'},
-    {path: '/img/', serverPath: '/dist/img'},
-    {path: '/css/', serverPath: '/dist/css'},
-    {path: '/js/', serverPath: '/dist/js'},
+    {path: '/fonts/', serverPath: '/../client/fonts'},
+    {path: '/img/', serverPath: '/../client/img'},
+    {path: '/css/', serverPath: '/../client/css'},
+    {path: '/js/', serverPath: '/../client/js'},
 ];
 const renderApp = `
     <!doctype html>

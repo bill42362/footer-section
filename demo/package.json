@@ -4,7 +4,8 @@
   "description": "Demo of 'header-bar'.",
   "main": "lib/js/index.js",
   "scripts": {
-    "start": "babel-node src/js",
+    "build": "rimraf dist && babel src -d dist --ignore .test.js",
+    "start": "npm run build && babel-node dist/server",
     "test": "jest"
   },
   "keywords": [
@@ -21,6 +22,7 @@
     "babel-preset-react": "^6.24.1",
     "express": "^4.15.4",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "rimraf": "^2.6.1"
   }
 }
