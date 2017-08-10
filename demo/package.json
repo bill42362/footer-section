@@ -1,0 +1,16 @@
+{
+  "name": "footer-section-demo",
+  "version": "1.0.0",
+  "description": "Demo of 'header-bar'.",
+  "main": "lib/js/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "footer",
+    "rwd",
+    "react"
+  ],
+  "author": "Pi-Yin Hsiao",
+  "license": "MIT"
+}
