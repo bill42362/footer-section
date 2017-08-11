@@ -1,6 +1,6 @@
 // index.js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FooterSection from '../../../../src/js/index.js';
+import App from './App.react.js';
 
-ReactDOM.render(<FooterSection />, document.getElementById('app-root'));
+ReactDOM.render(<App />, document.getElementById('app-root'));
