@@ -2,6 +2,7 @@
 'use strict';
 import Express from 'express';
 
+const isProd = process.env.NODE_ENV === 'production';
 const WEB_PORT = process.env.PORT || 3000;
 const expressStaticRoutes = [
     {path: '/fonts/', serverPath: '/../client/fonts'},
@@ -18,7 +19,7 @@ const renderApp = `
         </head>
         <body>
             <div id="app-root"></div>
-            <script type='text/javascript' src="/js/index.js" ></script>
+            <script type='text/javascript' src="${isProd ? `/js/bundle.js` : `http://localhost:7000/js/bundle.js`}" ></script>
         </body>
     </html>
 `;
