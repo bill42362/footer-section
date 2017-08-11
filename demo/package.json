@@ -9,6 +9,7 @@
     "buildcss": "lessc src/client/css/index.less dist/client/css/index.css",
     "build": "npm run rmdist && npm run buildjs && npm run buildcss",
     "start": "npm run build && NODE_ENV=production babel-node dist/server",
+    "devserver": "babel-node dist/server",
     "wds": "webpack-dev-server --progress",
     "test": "jest"
   },
