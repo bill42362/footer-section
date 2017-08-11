@@ -1,0 +1,38 @@
+{
+  "name": "footer-section-demo",
+  "version": "1.0.0",
+  "description": "Demo of 'header-bar'.",
+  "main": "lib/js/index.js",
+  "scripts": {
+    "rmdist": "rimraf dist",
+    "buildjs": "babel src -d dist --ignore .test.js && NODE_ENV=production webpack -p --progress",
+    "buildcss": "lessc src/client/css/index.less dist/client/css/index.css",
+    "build": "npm run rmdist && npm run buildjs && npm run buildcss",
+    "start": "npm run build && NODE_ENV=production babel-node dist/server",
+    "devserver": "babel-node dist/server",
+    "wds": "webpack-dev-server --progress",
+    "test": "jest"
+  },
+  "keywords": [
+    "footer",
+    "rwd",
+    "react"
+  ],
+  "author": "Pi-Yin Hsiao",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "express": "^4.15.4",
+    "less": "^2.7.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "rimraf": "^2.6.1",
+    "webpack": "^3.5.3",
+    "webpack-dev-server": "^2.7.1"
+  }
+}
