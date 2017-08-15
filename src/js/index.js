@@ -14,6 +14,7 @@ class FooterSection extends React.Component {
             }, [])
             .filter(child => child);
         const logos = children.filter(child => child.props['data-logo']);
+        const copyright = children.filter(child => child.props['data-copyright'])[0];
         const apps = children.filter(child => child.props['data-app']);
         const linkPanels = children.reduce((current, child) => {
             let result = current;
@@ -36,9 +37,7 @@ class FooterSection extends React.Component {
                         return <div className='footer-section-main-panel-logo' key={index}>{logo}</div>;
                     })}
                 </div>
-                <div className='footer-section-main-panel-copyright'>
-                    All Rights Reserved.
-                </div>
+                <div className='footer-section-main-panel-copyright'>{copyright}</div>
                 <div className='footer-section-main-panel-apps'>
                     {apps.map((app, index) => {
                         return <div className='footer-section-main-panel-app' key={index}>{app}</div>;
