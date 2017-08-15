@@ -15,7 +15,6 @@ const renderApp = `
     <html>
         <head>
             <title>footer-section</title>
-            <link rel="stylesheet" href="/css/index.css">
         </head>
         <body>
             <div id="app-root"></div>
