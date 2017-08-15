@@ -11,7 +11,7 @@ class App extends React.Component {
         return <div className='app'>
             <div className='content'></div>
             <div className='footer'>
-                <FooterSection>
+                <FooterSection desktopOnlyPanelKeys={[0]}>
                     <a data-main_panel={true} data-logo={true} href='http://tw.pbplus.me'>
                         <img data-image={true} src='https://tv.pbplus.me/img/logo.svg' title='Logo' />
                         <span data-title={true}>運動讓生活更有趣</span>
