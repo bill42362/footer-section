@@ -5,7 +5,7 @@ import React from 'react';
 class FooterSection extends React.Component {
     constructor(props) { super(props); }
     render() {
-        let { children } = this.props;
+        let { children, desktopOnlyPanelKeys } = this.props;
         if(!children.length) { children = [children]; }
         children = children
             .reduce((current, child) => {
@@ -45,6 +45,8 @@ class FooterSection extends React.Component {
                 </div>
             </div>
             {linkPanels.map((linkPanelChildren, index) => {
+                const panelKey = linkPanelChildren[0].props['data-panel_key'];
+                const isDesktopOnlyPanel = -1 !== desktopOnlyPanelKeys.indexOf(panelKey);
                 const panelHeader = linkPanelChildren.filter(linkPanelChild => linkPanelChild.props['data-panel_header'])[0];
                 const panelLinks = linkPanelChildren.filter(linkPanelChild => !linkPanelChild.props['data-panel_header']);
                 let panelTitle = undefined;
@@ -55,7 +57,7 @@ class FooterSection extends React.Component {
                     panelTitle = headerChildren.filter(headerChild => headerChild.props['data-title'])[0];
                     panelDescription = headerChildren.filter(headerChild => headerChild.props['data-description'])[0];
                 }
-                return <div className='footer-section-link-panel' key={index}>
+                return <div className={`footer-section-link-panel${isDesktopOnlyPanel ? ' desktop' : ''}`} key={index}>
                     {!!panelHeader && <div className='footer-section-link-panel-header'>
                         {!!panelTitle && <div className='footer-section-link-panel-header-title'>{panelTitle}</div>}
                         {!!panelDescription && <div className='footer-section-link-panel-header-description'>{panelDescription}</div>}
