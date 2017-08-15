@@ -13,11 +13,27 @@ class App extends React.Component {
             <div className='footer'>
                 <FooterSection>
                     <a data-main_panel={true} data-logo={true} href='http://tw.pbplus.me'>
-                        <img data-image={true} src='/img/logo.svg' title='Logo' />
+                        <img data-image={true} src='https://tv.pbplus.me/img/logo.svg' title='Logo' />
                         <span data-title={true}>運動讓生活更有趣</span>
                     </a>
+                    <a data-main_panel={true} data-logo={true} href='http://tw.pbplus.me'>
+                        <img data-image={true} src='https://tv.pbplus.me/img/logo.svg' title='Logo' />
+                        <span data-title={true}>運動讓生活更有趣</span>
+                    </a>
+                    <a data-main_panel={true} data-logo={true} href='http://tw.pbplus.me'>
+                        <img data-image={true} src='https://tv.pbplus.me/img/logo.svg' title='Logo' />
+                        <span data-title={true}>運動讓生活更有趣</span>
+                    </a>
+                    <div data-main_panel={true} data-copyright={true}>
+                        <div>© 2016-2017 pbplus.</div>
+                        <div>All Right Reserved</div>
+                    </div>
                     <a data-main_panel={true} data-app={true}>
-                        <img data-icon={true} src='/img/app-logo.svg' title='App Logo' />
+                        <img data-icon={true} src='https://tv.pbplus.me/img/icon/apple-touch-icon-114x114.png' title='App Logo' />
+                        <span data-title={true}>pb+TV App立即下載</span>
+                    </a>
+                    <a data-main_panel={true} data-app={true}>
+                        <img data-icon={true} src='https://tv.pbplus.me/img/icon/apple-touch-icon-114x114.png' title='App Logo' />
                         <span data-title={true}>pb+TV App立即下載</span>
                     </a>
                     <div data-links_panel={true} data-panel_key={0} data-panel_header={true}>
