@@ -15,7 +15,16 @@ export default {
     module: {
         rules: [
             { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
-        ],
+            {
+                test: /\.less$/,
+                exclude: /node_modules/,
+                use: [
+                    { loader: 'style-loader', },
+                    { loader: 'css-loader', },
+                    { loader: 'less-loader', },
+                ],
+            },
+        ]
     },
     devtool: 'source-map',
     resolve: {
@@ -23,5 +32,5 @@ export default {
     },
     devServer: {
         port: WDS_PORT,
-    },
+    }
 }
