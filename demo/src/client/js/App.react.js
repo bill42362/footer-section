@@ -11,7 +11,7 @@ class App extends React.Component {
         return <div className='app'>
             <div className='content'></div>
             <div className='footer'>
-                <FooterSection desktopOnlyPanelKeys={[0]}>
+                <FooterSection desktopOnlyPanelKeys={[0]} mobilePanelKeys={[2]}>
                     <a data-main_panel={true} data-logo={true} href='http://tw.pbplus.me'>
                         <img data-image={true} src='https://tv.pbplus.me/img/logo.svg' title='Logo' />
                         <span data-title={true}>運動讓生活更有趣</span>
@@ -59,6 +59,18 @@ class App extends React.Component {
                     <a data-links_panel={true} data-panel_key={1}>
                         <img data-icon={true} src='https://tv.pbplus.me/img/icon_fb_share.svg' title='揪in 官方粉絲團' />
                         <span data-title={true}>揪in 官方粉絲團</span>
+                    </a>
+                    <a data-links_panel={true} data-panel_key={2}>
+                        <span data-title={true}>隱私權政策</span>
+                    </a>
+                    <a data-links_panel={true} data-panel_key={2}>
+                        <span data-title={true}>隱私權策</span>
+                    </a>
+                    <a data-links_panel={true} data-panel_key={2}>
+                        <span data-title={true}>隱私權策</span>
+                    </a>
+                    <a data-links_panel={true} data-panel_key={2}>
+                        <span data-title={true}>隱私權政策隱私權政策</span>
                     </a>
                     <a data-links_panel={true} data-panel_key={2}>
                         <span data-title={true}>隱私權政策</span>
