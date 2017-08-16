@@ -3,9 +3,20 @@
 import React from 'react';
 
 class FooterSection extends React.Component {
-    constructor(props) { super(props); }
+    constructor(props) {
+        super(props);
+        this.state = {shouldGoTabletMode: false, shouldGoMobileMode: false};
+    }
+    componentDidMount() {
+        const baseRect = this.refs.base.getBoundingClientRect();
+        const shouldGoTabletMode = 575 < baseRect.width && 960 >= baseRect.width;
+        const shouldGoMobileMode = 575 >= baseRect.width;
+        this.setState({ shouldGoTabletMode, shouldGoMobileMode });
+    }
     render() {
-        let { children, desktopOnlyPanelKeys, mobilePanelKeys } = this.props;
+        const { shouldGoTabletMode, shouldGoMobileMode } = this.state;
+        const { desktopOnlyPanelKeys, mobilePanelKeys } = this.props;
+        let { children } = this.props;
         if(!children.length) { children = [children]; }
         children = children
             .reduce((current, child) => {
@@ -13,6 +24,8 @@ class FooterSection extends React.Component {
                 else { return [...current, ...child]; }
             }, [])
             .filter(child => child);
+        const tabletModeClassName = shouldGoTabletMode ? ' tablet' : '';
+        const mobileModeClassName = shouldGoMobileMode ? ' mobile' : '';
         const logos = children.filter(child => child.props['data-logo']);
         const copyright = children.filter(child => child.props['data-copyright'])[0];
         const apps = children.filter(child => child.props['data-app']);
@@ -30,7 +43,7 @@ class FooterSection extends React.Component {
             }
             return result;
         }, []);
-        return <div className='footer-section'>
+        return <div className={`footer-section${tabletModeClassName}${mobileModeClassName}`} ref='base'>
             <div className='footer-section-main-panel'>
                 <div className='footer-section-main-panel-logos'>
                     {logos.map((logo, index) => {
