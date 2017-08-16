@@ -29,6 +29,9 @@ export default {
     devtool: 'source-map',
     resolve: {
         extensions: ['.js', '.jsx'],
+        alias: {
+          react: `${__dirname}/node_modules/react`,
+        },
     },
     devServer: {
         port: WDS_PORT,
