@@ -1,5 +1,6 @@
 // index.less
 @import './tablet.less';
+@import './mobile.less';
 
 div.footer-section {
     display: flex;
@@ -97,6 +98,8 @@ div.footer-section {
             }
         }
     }
+    div.footer-section-mobile-main-panel { display: none; }
 }
 
-@media (max-width: 960px) { div.footer-section { .tablet(); } }
+@media (min-width: 576px) and (max-width: 960px){ div.footer-section { .tablet(); } }
+@media (max-width: 575px) { div.footer-section { .mobile(); } }
