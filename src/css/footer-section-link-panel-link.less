@@ -2,16 +2,19 @@
 
 div.footer-section-link-panel-link {
     transition: color .6s ease;
+    cursor: pointer;
     a.footer-section-link-panel-link-anchor {
         display: flex;
         margin-bottom: 1.5em;
-        div.footer-section-link-panel-link-icon {
+        div.footer-section-link-panel-link-icon-wrapper {
             flex: none;
             margin-right: 0.5em;
-            img {
-                width: auto; height: 1.5em;
-                margin-right: 0.5em;
-                vertical-align: middle;
+            div.footer-section-link-panel-link-icon {
+                border-radius: 4px;
+                img {
+                    width: auto; height: 1.5em;
+                    vertical-align: middle;
+                }
             }
         }
         div.footer-section-link-panel-link-texts {
@@ -25,6 +28,7 @@ div.footer-section-link-panel-link {
             div.footer-section-link-panel-link-description {
                 display: inline-block;
                 color: dimgray;
+                transition: color .6s ease;
             }
         }
     }
