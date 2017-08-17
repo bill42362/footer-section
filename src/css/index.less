@@ -1,4 +1,5 @@
 // index.less
+@import './footer-section-link-panel-link.less';
 @import './tablet.less';
 @import './mobile.less';
 
@@ -69,35 +70,6 @@ div.footer-section {
         }
         div.footer-section-link-panel-links {
             font-size: 0.8em;
-            div.footer-section-link-panel-link {
-                transition: color .6s ease;
-                a.footer-section-link-panel-link-anchor {
-                    display: flex;
-                    margin-bottom: 1.5em;
-                    div.footer-section-link-panel-link-icon {
-                        flex: none;
-                        margin-right: 0.5em;
-                        img {
-                            width: auto; height: 1.5em;
-                            margin-right: 0.5em;
-                            vertical-align: middle;
-                        }
-                    }
-                    div.footer-section-link-panel-link-texts {
-                        flex: auto;
-                        div.footer-section-link-panel-link-title {
-                            display: inline-block;
-                            min-width: 5em;
-                            margin-right: 1em;
-                            span { }
-                        }
-                        div.footer-section-link-panel-link-description {
-                            display: inline-block;
-                            color: dimgray;
-                        }
-                    }
-                }
-            }
         }
     }
     div.footer-section-mobile-main-panel { display: none; }

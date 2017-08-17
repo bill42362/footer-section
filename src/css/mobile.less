@@ -1,4 +1,5 @@
 // mobile.less
+@import './footer-section-link-panel-link-mobile.less';
 
 .mobile() {
     display: block;
@@ -18,16 +19,7 @@
         div.footer-section-link-panel-header { display: none; }
         div.footer-section-link-panel-links {
             font-size: 0.9em;
-            div.footer-section-link-panel-link {
-                a.footer-section-link-panel-link-anchor {
-                    display: inline-block;
-                    div.footer-section-link-panel-link-icon { display: none; }
-                    div.footer-section-link-panel-link-texts {
-                        div.footer-section-link-panel-link-title { margin: 0px 0.5em; min-width: 0px; }
-                        div.footer-section-link-panel-link-description { display: none; }
-                    }
-                }
-            }
+            .footer-section-link-panel-link-mobile();
         }
     }
     div.footer-section-mobile-main-panel {
