@@ -1,6 +1,7 @@
 // index.js
 'use strict';
 import React from 'react';
+import FooterSectionLinkPanelLink from './FooterSectionLinkPanelLink.js';
 
 class FooterSection extends React.Component {
     constructor(props) {
@@ -79,26 +80,9 @@ class FooterSection extends React.Component {
                         {!!panelDescription && <div className='footer-section-link-panel-header-description'>{panelDescription}</div>}
                     </div>}
                     <div className='footer-section-link-panel-links'>
-                        <div className='footer-section-link-panel-link'>
-                            {panelLinks.map((panelLink, index) => {
-                                const linkPropsWithoutChildren = Object.assign({}, panelLink.props, {children: null});
-                                let linkChildren = panelLink.props.children;
-                                if(!linkChildren.length) { linkChildren = [ linkChildren ]; }
-                                const linkIcon = linkChildren.filter(linkChild => linkChild.props['data-icon'])[0];
-                                const linkTitle = linkChildren.filter(linkChild => linkChild.props['data-title'])[0];
-                                const linkDescription = linkChildren.filter(linkChild => linkChild.props['data-description'])[0];
-                                return <a
-                                    className='footer-section-link-panel-link-anchor' key={index}
-                                    {...linkPropsWithoutChildren}
-                                >
-                                    {!!linkIcon && <div className='footer-section-link-panel-link-icon'>{linkIcon}</div>}
-                                    <div className='footer-section-link-panel-link-texts'>
-                                        <div className='footer-section-link-panel-link-title'>{linkTitle}</div>
-                                        <div className='footer-section-link-panel-link-description'>{linkDescription}</div>
-                                    </div>
-                                </a>;
-                            })}
-                        </div>
+                        {panelLinks.map((panelLink, index) => {
+                            return <FooterSectionLinkPanelLink key={index} {...panelLink.props} />;
+                        })}
                     </div>
                 </div>;
             })}
