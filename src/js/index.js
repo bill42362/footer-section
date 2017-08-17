@@ -3,6 +3,8 @@
 import React from 'react';
 import FooterSectionLinkPanelLink from './FooterSectionLinkPanelLink.js';
 
+const baseElementId = `${Math.random()}${Math.random()}${Math.random()}`;
+
 class FooterSection extends React.Component {
     constructor(props) {
         super(props);
@@ -10,7 +12,7 @@ class FooterSection extends React.Component {
     }
     componentDidMount() {
         const { maxRwdMode } = this.props;
-        const baseWidth = this.refs.base.getBoundingClientRect().width;
+        const baseWidth = document.getElementById(baseElementId).getBoundingClientRect().width;
         const shouldGoTabletMode = (575 < baseWidth && 960 >= baseWidth)
             || (960 < baseWidth && 'tablet' === maxRwdMode);
         const shouldGoMobileMode = 575 >= baseWidth || (575 < baseWidth && 'mobile' === maxRwdMode);
@@ -46,7 +48,7 @@ class FooterSection extends React.Component {
             }
             return result;
         }, []);
-        return <div className={`footer-section${tabletModeClassName}${mobileModeClassName}`} ref='base'>
+        return <div className={`footer-section${tabletModeClassName}${mobileModeClassName}`} id={baseElementId}>
             <div className='footer-section-main-panel'>
                 <div className='footer-section-main-panel-logos'>
                     {logos.map((logo, index) => {
