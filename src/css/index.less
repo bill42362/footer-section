@@ -1,0 +1,79 @@
+// index.less
+@import './footer-section-link-panel-link.less';
+@import './tablet.less';
+@import './mobile.less';
+
+div.footer-section {
+    display: flex;
+    background-color: black;
+    padding: 40px;
+    color: white;
+    letter-spacing: 1px;
+    a { text-decoration: none; color: inherit; }
+    &.tablet { .tablet(); }
+    &.mobile { .mobile(); }
+    div.footer-section-main-panel {
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 40px 0px;
+        div.footer-section-main-panel-logos {
+            flex: none;
+            margin-bottom: 2em;
+            div.footer-section-main-panel-logo {
+                margin-bottom: 1em;
+                a {
+                    img {
+                        display: block; height: 1.7em;
+                        margin-bottom: 0.5em;
+                    }
+                    span { font-size: 0.7em; }
+                }
+            }
+        }
+        div.footer-section-main-panel-copyright {
+            flex: auto;
+            margin-bottom: 2em;
+            font-size: 0.8em;
+        }
+        div.footer-section-main-panel-apps {
+            flex: none;
+            div.footer-section-main-panel-app {
+                margin-bottom: 0.5em;
+                a {
+                    font-weight: 300;
+                    img {
+                        width: auto; height: 1.5em;
+                        margin-right: 0.5em;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+    div.footer-section-link-panel {
+        flex: auto;
+        border-left: 1px solid rgb(38, 38, 38);
+        padding: 10px 40px 40px;
+        div.footer-section-link-panel-header {
+            margin-bottom: 1.3em;
+            div.footer-section-link-panel-header-title {
+                display: inline-block;
+                margin-right: 1em;
+                font-size: 1.2em;
+                font-weight: 600;
+            }
+            div.footer-section-link-panel-header-description {
+                display: inline-block;
+                font-size: 0.8em;
+            }
+        }
+        div.footer-section-link-panel-links {
+            font-size: 0.8em;
+        }
+    }
+    div.footer-section-mobile-main-panel { display: none; }
+}
+
+@media (min-width: 576px) and (max-width: 960px){ div.footer-section { .tablet(); } }
+@media (max-width: 575px) { div.footer-section { .mobile(); } }
