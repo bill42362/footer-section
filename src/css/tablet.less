@@ -1,5 +1,9 @@
 // tablet.less
 
 .tablet() {
-    div.footer-section-link-panel.desktop { display: none; }
+    div.footer-section-main-panel { padding-left: 0px; }
+    div.footer-section-link-panel {
+        &:nth-last-of-type(2) { padding-right: 0px; }
+        &.desktop { display: none; }
+    }
 }
