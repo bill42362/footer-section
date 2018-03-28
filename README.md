@@ -2,14 +2,13 @@
 Basic footer section with RWD.
 
 ## props ##
-* There is three mode for RWD: `desktop`, `tablet` and `mobile`.
+* There are three modes for RWD: `desktop`, `tablet` and `mobile`.
 * `desktopOnlyPanelKeys`: define which panels will only display on `desktop` mode.
 * `mobilePanelKeys`: define which panels will be allowed on `mobile` mode.
 * `maxRwdMode`: define the largest mode package will use, ex: set to `tablet` will disable `desktop` mode.
 
 ## children ##
 There are two kinds of panel avaliable: `main` panel and `links` panel.
-
 ### main panel ###
 * Main panel will be displayed on every RWD modes.
 * Pass `data-main_panel={true}` prop to put child component in main panel.
