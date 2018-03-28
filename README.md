@@ -57,3 +57,10 @@ There are two kinds of panel avaliable: `main` panel and `links` panel.
   <span data-title={true}>pb+運動平台 官方粉絲團</span>
 </a>
 ```
+
+## Start demo server ##
+```sh
+cd tmp/
+npm install
+npm start # will listen on http://localhost:300
+```
