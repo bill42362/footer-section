@@ -10,13 +10,19 @@ class FooterSection extends React.Component {
         super(props);
         this.state = {shouldGoTabletMode: false, shouldGoMobileMode: false};
     }
-    componentDidMount() {
+    updateRwdMode() {
         const { maxRwdMode } = this.props;
         const baseWidth = document.getElementById(baseElementId).getBoundingClientRect().width;
         const shouldGoTabletMode = (575 < baseWidth && 960 >= baseWidth)
             || (960 < baseWidth && 'tablet' === maxRwdMode);
         const shouldGoMobileMode = 575 >= baseWidth || (575 < baseWidth && 'mobile' === maxRwdMode);
         this.setState({ shouldGoTabletMode, shouldGoMobileMode });
+    }
+    componentDidMount() { this.updateRwdMode(); }
+    componentDidUpdate(prevProps, prevState) {
+        const { maxRwdMode } = this.props;
+        const { maxRwdMode: prevMaxRwdMode } = prevProps;
+        if(prevMaxRwdMode !== maxRwdMode) { this.updateRwdMode(); }
     }
     render() {
         const { shouldGoTabletMode, shouldGoMobileMode } = this.state;
